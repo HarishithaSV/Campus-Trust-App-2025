@@ -1,0 +1,52 @@
+### **1. Login Module**  
+- Admin Login  
+- Student Login  
+- Faculty Login  
+- Management Login  
+
+### **2. Student Module**  
+- Profile  
+- Attendance  
+- Marks  
+- Timetable  
+- Daily Schedule  
+- Library Management  
+- Fee Management  
+- Bus Tracking  
+- Announcements  
+- Events Booking  
+- Appointments  
+- Textbook Buy/Sell  
+- Public Forum  
+- Rewards  
+- Hall Tickets  
+
+### **3. Faculty Module**  
+- Profile  
+- Marks Management  
+- Announcements  
+- Student Profiles  
+- Bus Tracking  
+- Class Schedule  
+- Library Notifications  
+
+### **4. Management Module**  
+- Semester Results  
+- Event Announcements  
+- Complaints  
+- Hall Tickets  
+- Bus Tracking  
+
+### **5. Admin Module**  
+- User Management  
+- Dashboard Analytics  
+- Access Control  
+- Maintenance Tracker  
+- Rewards System  
+- Backup and Recovery  
+
+### **6. Shared Features**  
+- Notifications  
+- Search Functionality  
+- Emergency Button  
+- Feedback & Support  

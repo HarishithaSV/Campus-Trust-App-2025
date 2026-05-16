@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus App - Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Campus App</h1>
+                <p class="subtitle">Create your account</p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            name="firstName" 
+                            placeholder="First name"
+                            required
+                        >
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            name="lastName" 
+                            placeholder="Last name"
+                            required
+                        >
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Enter a username (min 3 characters)"
+                        minlength="3"
+                        required
+                    >
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter password (min 8 characters)"
+                            minlength="8"
+                            required
+                        >
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('password')">
+                            <span class="eye-icon">👁️</span>
+                        </button>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                    <small class="password-strength" id="passwordStrength"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="Confirm password"
+                            required
+                        >
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirmPassword')">
+                            <span class="eye-icon">👁️</span>
+                        </button>
+                    </div>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select your role</option>
+                        <option value="STUDENT">Student</option>
+                        <option value="FACULTY">Faculty</option>
+                        <option value="ADMIN">Admin</option>
+                        <option value="MANAGEMENT">Management</option>
+                    </select>
+                    <span class="error-message" id="roleError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number (Optional)</label>
+                    <input 
+                        type="tel" 
+                        id="phoneNumber" 
+                        name="phoneNumber" 
+                        placeholder="Your phone number"
+                    >
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <span>I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a></span>
+                    </label>
+                    <span class="error-message" id="termsError"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="registerBtn">
+                    <span class="btn-text">Create Account</span>
+                    <span class="spinner" id="spinner" style="display: none;"></span>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+
+        <!-- Alert Messages -->
+        <div id="alertContainer"></div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

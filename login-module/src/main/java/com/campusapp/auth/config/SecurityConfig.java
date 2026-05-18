@@ -67,6 +67,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/refresh-token").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/logout").permitAll()
                         .requestMatchers(HttpMethod.GET, "/auth/health").permitAll()
+                        .requestMatchers("/student/**").hasAuthority("STUDENT")
                         .requestMatchers("/auth/**").authenticated()
                         .anyRequest().authenticated()
                 )

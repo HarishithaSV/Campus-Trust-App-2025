@@ -5,7 +5,9 @@ const AUTH_ENDPOINTS = {
     REGISTER: '/auth/register',
     REFRESH_TOKEN: '/auth/refresh-token',
     LOGOUT: '/auth/logout',
-    HEALTH: '/auth/health'
+    HEALTH: '/auth/health',
+    PROFILE: '/student/profile',
+    ATTENDANCE: '/student/attendance'
 };
 
 // Token Storage
@@ -210,11 +212,18 @@ function disableForm(formId, disabled) {
     }
 }
 
-// Check Authentication Status
+// Check Authentication Status for login/register pages
 function checkAuthStatus() {
-    if (TokenManager.isAuthenticated()) {
-        // Redirect to dashboard or home page
+    const path = window.location.pathname;
+    const isAuthPage = path.endsWith('/login.html') || path.endsWith('/register.html');
+    if (TokenManager.isAuthenticated() && isAuthPage) {
         window.location.href = '/dashboard.html';
+    }
+}
+
+function ensureAuthenticated() {
+    if (!TokenManager.isAuthenticated()) {
+        window.location.href = '/login.html';
     }
 }
 
